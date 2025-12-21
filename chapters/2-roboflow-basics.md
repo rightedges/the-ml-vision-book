@@ -1,3 +1,8 @@
+---
+layout: page
+title: Chapter
+---
+
 # Chapter 2: Roboflow Basics
 
 Building a successful vision model starts with high-quality data. In this chapter, we'll walk through the process of creating a project in Roboflow.

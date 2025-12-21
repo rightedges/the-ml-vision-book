@@ -1,0 +1,20 @@
+title: "ML Vision: The Roboflow Guide"
+description: "A comprehensive guide to building and deploying modern ML vision models."
+baseurl: "/the-ml-vision-book"
+url: "https://rightedges.github.io"
+
+theme: minima
+plugins:
+  - jekyll-remote-theme
+
+# Navigation data
+data_dir: _data
+
+# Exclude VitePress files
+exclude:
+  - docs/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - LICENSE

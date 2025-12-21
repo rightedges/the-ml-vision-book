@@ -1,3 +1,8 @@
+---
+layout: page
+title: Chapter
+---
+
 # Chapter 4: Web Implementation
 
 Bringing Vision models to the web allows for real-time interaction without server-side latency. Roboflow provides a seamless JavaScript library for this.

@@ -1,3 +1,8 @@
+---
+layout: page
+title: Chapter
+---
+
 # Chapter 3: PyTorch Implementation
 
 In this chapter, we'll dive into the code required to run inference using a model trained on Roboflow within a PyTorch environment.

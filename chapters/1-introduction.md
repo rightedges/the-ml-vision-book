@@ -1,3 +1,8 @@
+---
+layout: page
+title: Chapter
+---
+
 # Chapter 1: Introduction to ML Vision
 
 Computer Vision (CV) is the field of Artificial Intelligence that enables computers and systems to derive meaningful information from digital images, videos, and other visual inputs.

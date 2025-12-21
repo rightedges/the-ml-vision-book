@@ -1,0 +1,9 @@
+chapters:
+  - title: "1. Introduction"
+    url: "/chapters/1-introduction"
+  - title: "2. Roboflow Basics"
+    url: "/chapters/2-roboflow-basics"
+  - title: "3. PyTorch Implementation"
+    url: "/chapters/3-implementation-pytorch"
+  - title: "4. Web Implementation"
+    url: "/chapters/4-implementation-web"
