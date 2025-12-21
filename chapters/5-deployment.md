@@ -4,7 +4,7 @@ title: "5. Vision in the Real World"
 nav_order: 6
 ---
 
-# Chapter 4: Vision in the Real World: Bringing Eyes to Life
+# Chapter 5: Vision in the Real World: Bringing Eyes to Life
 
 We have come a long way in our 101 journey. We started with a single, silent pixel (Chapter 1). We learned how to teach a machine about the world using data (Chapter 2). And we peeked inside its digital brain to understand its architecture (Chapter 3). 
 
