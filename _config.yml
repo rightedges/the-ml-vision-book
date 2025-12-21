@@ -5,12 +5,11 @@ url: "https://rightedges.github.io"
 
 theme: minima
 plugins:
-  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# Navigation data
-data_dir: _data
-
-# Exclude VitePress files
+# Exclude VitePress files and node stuff
 exclude:
   - docs/
   - node_modules/
@@ -18,3 +17,6 @@ exclude:
   - package-lock.json
   - README.md
   - LICENSE
+  - vendor/
+  - Gemfile
+  - Gemfile.lock

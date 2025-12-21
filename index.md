@@ -13,10 +13,10 @@ Welcome to the comprehensive guide to building and deploying modern ML vision mo
 - **PyTorch Integration**: Custom training loops and inference engines.
 - **Web Deployment**: Real-time inference in the browser with `roboflow.js`.
 
-[Get Started]({{ '/chapters/1-introduction.html' | relative_url }}){: .btn }
+[Get Started]({{ site.baseurl }}/chapters/1-introduction.html){: .btn }
 
 ## Chapters
 
 {% for chapter in site.data.navigation.chapters %}
-- [{{ chapter.title }}]({{ chapter.url | append: '.html' | relative_url }})
+- [{{ chapter.title }}]({{ site.baseurl }}{{ chapter.url }}.html)
 {% endfor %}
