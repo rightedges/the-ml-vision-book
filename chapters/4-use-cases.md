@@ -25,6 +25,20 @@ With a model like **YOLOv8** (which we met in Chapter 3), that intersection beco
 ML Vision is also becoming a guardian of safety. In crowded train stations or public squares, models can identify "anomalous behavior"—not in a scary, surveillance sense, but in a life-saving one. If a model detects a person stumbling near the edge of a platform or a package left in a precarious spot, it can alert staff instantly.
 This requires the **Consistency** of data we discussed in Chapter 2. To teach a machine what a "stumble" looks like vs. a "hurried walk," we need thousands of precisely labeled examples. The machine’s ability to protect us is limited by the quality of the "experience" we feed it.
 
+## 🚗 The Sovereign Automobile: Autonomous Driving
+
+Perhaps the most famous—and most difficult—application of computer vision is the quest for the self-driving car. While many companies use a mix of Radar, Lidar, and Cameras, **Tesla** has famously pioneered a "Vision-Only" approach. Their philosophy is simple: humans drive using only vision and a brain, so a machine should be able to do the same.
+
+### Occupancy Networks: Building 3D from 2D
+In Chapter 1, we learned that a camera captures a 2D grid of pixels. But a car lives in a 3D world. To bridge this gap, modern autonomous systems use **Occupancy Networks**. 
+These are massive neural networks that take the 2D video feeds from multiple cameras and "reconstruct" a 3D volume of space. The model predicts which "Voxel" (a 3D pixel) is occupied by a truck, a curb, or empty air.
+- **The Data Challenge**: This requires the extreme **Data Rigor** of Chapter 2. To teach a car to understand depth without a laser (Lidar), it must have seen millions of miles of "experience." It must learn subtle cues, like how an object's size changes as it gets closer, to calculate distance with mathematical certainty.
+
+### The Shadow Problem and Edge Cases
+The real world is full of "Edge Cases." A shadow from a bridge might look like a solid wall to a poorly trained model. A white truck against a bright sky might disappear into the "noise."
+Solving these problems requires a combination of the **Global Attention** of Transformers (Chapter 3) to understand context and the **Synthetic Augmentation** of Chapter 2 to simulate dangerous scenarios that are too risky to test in the real world. 
+- **Safety at the Edge**: Because a car moves at 70 mph, it cannot wait for a "Cloud" (Chapter 5) to tell it when to brake. The car must have a powerful **Edge Brain** that processes the world in milliseconds, making life-or-death decisions locally.
+
 ## 🏥 The Digital Diagnostic: Vision in Healthcare
 
 Nowhere is the precision of ML Vision more critical than in the field of medicine. Here, we move beyond simple identification into the realm of **Instance Segmentation**.
@@ -88,6 +102,7 @@ We are transition from a world of "blind" machines into a world of "seeing" mach
 
 ### Summary Checklist for Chapter 4:
 - [x] Explored Smart City applications and the impact of traffic optimization.
+- [x] Analyzed Tesla's "Vision-Only" approach and the role of Occupancy Networks.
 - [x] Understood the role of Segmentation in medical diagnostics and oncology.
 - [x] Learned how Industrial vision uses Augmentation to detect never-before-seen defects.
 - [x] Explored the 3D bridge between vision and robotic manipulation.
