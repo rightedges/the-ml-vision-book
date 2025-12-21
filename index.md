@@ -21,6 +21,7 @@ We have structured this book as a cohesive, four-stage evolution of intelligence
 - **Stage 3: The Architecture of Sight**: We step inside the digital brain. From the "Flashlights" of CNNs to the "Spotlights" of Transformers, we demystify how different neural networks organize information.
 - **Stage 4: Vision in Action**: The narrative climax. We show how the concepts of perception, data, and architecture come together to solve challenges in healthcare, safety, and the environment.
 - **Stage 5: Vision in the Real World**: Bringing it all to life. Moving from abstract models to the "Edge," we explore how real-time intelligence is changing our cameras from recording devices into understanding devices.
+- **Stage 6: The Gate Guardian**: A practical prototype. We walk through building a real-world system using PyTorch and an ESP32 to monitor a security camera feed.
 
 [Begin the Journey]({{ site.baseurl }}/chapters/1-introduction.html){: .btn }
 
