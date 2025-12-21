@@ -1,6 +1,7 @@
 ---
-layout: page
-title: "Identifying the World"
+layout: default
+title: "2. Identifying the World"
+nav_order: 3
 ---
 
 # Chapter 2: Identifying the World: The Art of Data

@@ -1,6 +1,9 @@
 ---
-layout: page
-title: "ML Vision 101"
+layout: default
+title: Home
+nav_order: 1
+description: "Foundations of ML Vision: A Narrative Journey into Machine Sight"
+permalink: /
 ---
 
 # ML Vision 101: A Narrative Journey into Machine Sight

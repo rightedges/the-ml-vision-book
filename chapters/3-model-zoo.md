@@ -1,6 +1,7 @@
 ---
-layout: page
-title: "The Architecture of Sight"
+layout: default
+title: "3. The Architecture of Sight"
+nav_order: 4
 ---
 
 # Chapter 3: The Architecture of Sight: How Models are Built

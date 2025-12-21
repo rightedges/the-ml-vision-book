@@ -1,6 +1,7 @@
 ---
-layout: page
-title: "The First Pixel"
+layout: default
+title: "1. The First Pixel"
+nav_order: 2
 ---
 
 # Chapter 1: The First Pixel: How Machines Begin to See

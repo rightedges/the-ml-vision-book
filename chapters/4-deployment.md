@@ -1,6 +1,7 @@
 ---
-layout: page
-title: "Vision in the Real World"
+layout: default
+title: "4. Vision in the Real World"
+nav_order: 5
 ---
 
 # Chapter 4: Vision in the Real World: Bringing Eyes to Life

@@ -3,20 +3,29 @@ description: "A comprehensive guide to building and deploying modern ML vision m
 baseurl: "/the-ml-vision-book"
 url: "https://rightedges.github.io"
 
-theme: minima
+remote_theme: just-the-docs/just-the-docs
+
+# Plugins
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Exclude VitePress files and node stuff
+# Theme settings
+color_scheme: dark # Optional: Dark mode by default
+search_enabled: true
+aux_links:
+  "View on GitHub":
+    - https://github.com/rightedges/the-ml-vision-book
+
+# Exclude unnecessary files
 exclude:
   - docs/
   - node_modules/
   - package.json
   - package-lock.json
-  - README.md
-  - LICENSE
   - vendor/
   - Gemfile
   - Gemfile.lock
+  - .github/
