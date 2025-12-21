@@ -1,9 +1,9 @@
 chapters:
-  - title: "1. Machine Perception"
+  - title: "1. The First Pixel"
     url: "/chapters/1-introduction"
-  - title: "2. The Data Blueprint"
+  - title: "2. Identifying the World"
     url: "/chapters/2-data-science"
-  - title: "3. The Model Zoo"
+  - title: "3. The Architecture of Sight"
     url: "/chapters/3-model-zoo"
-  - title: "4. Deployment & Edge"
+  - title: "4. Vision in the Real World"
     url: "/chapters/4-deployment"
