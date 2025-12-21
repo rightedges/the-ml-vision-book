@@ -53,7 +53,9 @@ How does a tiny chip query a complex PyTorch brain? There are two primary ways:
 The ESP32-Cam captures a low-resolution image (e.g., 224x224 pixels, the standard input for ResNet18). It then sends a "Request" to a local server in your house (like a Raspberry Pi or a home PC) where the PyTorch model is running.
 - **The ESP32's Job**: "Here is a picture from right now. What do you see?"
 - **The Model's Job**: "I see 'Open' with 98% confidence."
-- **The Action**: The ESP32 then turns on a red LED on your desk or sends a notification to your phone.
+- **The Action**: This is where we bridge to the modern Smart Home. Instead of a simple lightbulb, the system talks to **Apple Home** or **Google Home** via an automation bridge. 
+    - **Proximity Intelligence (Geofencing)**: When your phone "knows" you are almost home, the system checks the vision model. If the gate is closed, it triggers it to open before you even pull into the driveway. 
+    - **Security on Departure**: When you leave the geofence of your home, the system performs a final "Vision Audit." If the model identifies the gate is still open, it closes it automatically and sends a notification to your watch: *"Gate secured for your departure."*
 
 #### B. TinyML (The Advanced Way)
 Using a library like **TensorFlow Lite for Microcontrollers**, you can actually compress the ResNet18 model so much that it fits *directly* onto the ESP32's internal memory. In this scenario, the "Thinking" and the "Seeing" happen on the exact same piece of silicon. There is no network, no lag, and no way for the data to leak. This is the ultimate expression of **Privacy and Speed** in vision.
