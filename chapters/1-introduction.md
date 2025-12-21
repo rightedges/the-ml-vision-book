@@ -1,42 +1,31 @@
 ---
 layout: page
-title: Foundations
+title: Machine Perception
 ---
 
-# Chapter 1: Foundations of ML Vision
+# Chapter 1: Machine Perception
 
-To understand machine learning vision, we must first ask a fundamental question: **How does a computer see?**
+Computer Vision (CV) is the science of enabling machines to "see"—not as a human does, but through the lens of mathematics and high-dimensional data.
 
-## Biological vs. Computer Vision
+## The Evolution of Sight
 
-When you look at a cat, your brain processes light hitting your retina into complex shapes, patterns, and concepts. A computer, however, sees nothing but a grid of numbers.
+### Classical Computer Vision
+In the era of traditional software engineering (OpenCV), we used "hand-crafted features." Engineers wrote specific algorithms to find edges, corners, or specific colors. If the lighting changed, the software broke.
 
-### The Pixel Grid
-Every digital image is a three-dimensional array (or **tensor**) of numbers:
-- **Height** and **Width**: The resolution of the image.
-- **Channels**: Usually 3 (Red, Green, Blue).
+### Deep Learning
+Modern vision relies on **Connectionism**. Instead of defining what a cat looks like, we build a "neural network" and show it thousands of cats. The network learns the features itself, ranging from simple edges in the first layers to complex concepts (like ears or fur patterns) in the deeper layers.
 
-At its most basic level, Computer Vision is the math required to turn this grid of numbers into a semantic understanding (e.g., "This grid contains a cat").
+## The Tensor: The Atom of Vision
 
-## What is a "Model"?
+To a computer, an image is not a picture; it is a **Tensor**.
 
-In the context of ML Vision, a **Model** is a mathematical function that has been "trained" to recognize patterns.
+Standard images are represented as 3D Tensors: `[Height, Width, Channels]`.
+- **Spatial Dimensions**: The pixels across $(x, y)$.
+- **Depth Dimension**: The color channels $(R, G, B)$.
 
-Imagine a complex mathematical equation with millions of knobs (called **parameters** or **weights**). 
-1. **Training**: We show the equation millions of images. Every time it's wrong, we turn the knobs slightly to get closer to the right answer.
-2. **Inference**: Once the knobs are set, we can show it a new image, and the math will output a probability (e.g., "98% likely to be a cat").
-
-## From Pixels to Tensors
-
-In modern AI, we don't just work with pixels. we transform them into **Tensors**. 
-- A **Scalar** is a single number.
-- A **Vector** is a list of numbers.
-- A **Matrix** is a grid of numbers.
-- A **Tensor** is the generalized form of all the above.
-
-Vision models use multi-dimensional tensors to represent color, depth, and spatial relationships all at once.
+When we process an image, we are performing linear algebra on these tensors at massive scales.
 
 ---
 
 > [!NOTE]
-> Understanding that a model is just "optimized math" is the first step to mastering Computer Vision. In the next chapter, we will explore the specific tasks we ask these models to perform.
+> We have moved from **Programming** (defining rules) to **Training** (defining goals). In the next chapter, we will look at the science of the data used for that training.

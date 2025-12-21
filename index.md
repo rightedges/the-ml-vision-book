@@ -5,14 +5,14 @@ title: "Foundations of ML Vision"
 
 # Foundations of ML Vision
 
-Computer Vision is shifting from a specialized research field to a foundational tier of modern software. This book explores the core principles of how computers see, process, and understand the visual world.
+Computer Vision is shifting from a specialized research field to a foundational tier of modern software. This book explores the core principles of how machines perceive, process, and understand the visual world—without reliance on specific platforms.
 
-## Conceptual Core
+## What You Will Learn
 
-- **First Principles**: Understanding pixels, tensors, and the math of "models."
-- **Computer Science of Vision**: The transition from hand-crafted features to deep learning.
-- **Architecture**: A deep dive into CNNs and Transformers.
-- **Deployment**: The engineering of high-performance edge intelligence.
+- **Machine Perception**: The transition from Pixels to Tensors and the mathematics of seeing.
+- **The Data Blueprint**: The science of ground truth, annotation rigor, and augmentation logic.
+- **The Model Zoo**: Deep dives into the architectures that define the field (YOLO, DETR, ResNet, and SAM).
+- **Edge Deployment**: How to move from model files to high-performance production intelligence.
 
 [Start Reading]({{ site.baseurl }}/chapters/1-introduction.html){: .btn }
 
