@@ -1,9 +1,9 @@
 chapters:
-  - title: "1. Introduction"
+  - title: "1. Foundations"
     url: "/chapters/1-introduction"
-  - title: "2. Roboflow Basics"
+  - title: "2. Vision Tasks"
     url: "/chapters/2-roboflow-basics"
-  - title: "3. PyTorch Implementation"
+  - title: "3. Architecture & Training"
     url: "/chapters/3-implementation-pytorch"
-  - title: "4. Web Implementation"
+  - title: "4. Deployment & Edge"
     url: "/chapters/4-implementation-web"

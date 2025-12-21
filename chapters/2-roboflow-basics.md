@@ -1,96 +1,44 @@
 ---
 layout: page
-title: Chapter
+title: Vision Tasks
 ---
 
-# Chapter 2: Roboflow Basics
+# Chapter 2: Computer Vision Tasks
 
-Building a successful vision model starts with high-quality data. In this chapter, we'll walk through the process of creating a project in Roboflow.
+Not all vision problems are the same. We generally categorize them into a hierarchy of complexity.
 
-## Step 1: Create a Project
+## The Hierarchy of Vision
 
-Login to [Roboflow](https://roboflow.com) and create a new project. For this guide, we'll assume an **Object Detection** project type.
+### 1. Classification
+**"What is in this image?"**
+The model outputs a single label for the entire image. 
+*Example: Is this an X-ray of a healthy lung or one with pneumonia?*
 
-## Step 2: Image Acquisition
+### 2. Object Detection
+**"What is in this image, and where is it?"**
+The model identifies specific objects and draws a **Bounding Box** around them.
+*Example: Detecting cars, pedestrians, and traffic lights for an autonomous vehicle.*
 
-You can upload your own images or leverage **Roboflow Universe**, a community repository of over 200,000 datasets.
+### 3. Instance Segmentation
+**"What is in this image, where is it, and exactly which pixels belong to it?"**
+Instead of a box, the model creates a pixel-perfect **Mask**.
+*Example: Identifying the exact boundary of a tumor in medical imaging.*
 
-## Step 3: Annotation
+## The Science of Data Preparation
 
-Annotation is the process of labeling images so the model knows what it's looking at. This is the most critical human-in-the-loop step in the vision pipeline.
+To train these models, we need ground truth data. This is where **Annotation** comes in.
 
-### Why Annotation Precision Matters
-In ML Vision, the governing principle is **Garbage In, Garbage Out (GIGO)**.
-- **Bounding Box Tightness**: If boxes are too loose, the model learns background noise as part of the object. If too tight, it misses critical features.
-- **Class Consistency**: If one person labels a "Golden Retriever" as "Dog" and another labels it as "Retriever", the model will become confused and its confidence will drop.
-- **Edge Cases**: Properly labeling occluded (partially hidden) or truncated (cut off) objects teaches the model to recognize them in real-world messy environments.
+### Why Quality Trumps Quantity
+A model is only as good as the data it learns from (**Garbage In, Garbage Out**).
+- **Labeling Consistency**: If you label "Soda Can" in one image and "Coke" in another, the model's math will never converge.
+- **Spatial Precision**: A bounding box that is too large includes "noise" (the background), making the model less accurate.
 
-> [!IMPORTANT]
-> Roboflow provided tools like **Auto-Label** to speed this up, but human verification remains the gold standard for high-accuracy models.
-
-## Step 4: Preprocessing
-
-Preprocessing involves applying transformations to your images *before* they are sent to the model training engine.
-
-### Why Preprocessing Matters
-Consistency is the goal of preprocessing.
-- **Input Standardization**: Most models (like YOLO) expect a specific input size (e.g., 640x640). Preprocessing ensures every image, regardless of its original aspect ratio, is resized correctly.
-- **Training Speed**: Reducing image resolution to the minimum required for detection significantly speeds up training and inference.
-- **Removing Bias**: Steps like **Auto-Orient** remove metadata-based rotation issues that can cause images to appear sideways to the model.
-
-### Key Preprocessing Steps
-- **Grayscale**: Reduces 3-channel color data to 1-channel. Crucial if color doesn't matter (e.g., detecting metal cracks) as it triples processing speed.
-- **Static Crop**: Focuses the model on a specific area of interest, removing irrelevant peripheral data.
-- **Normalization**: Ensures pixel values are within a specific range (usually 0 to 1), which helps the neural network converge faster.
-
-## Step 5: Generating a Version
-
-Once you're happy with your dataset, "Generate" a version. This locks the images and annotations so you can train against a consistent snapshot.
+## Implementation Tool: Roboflow
+While the concepts above are universal, tools like **Roboflow** provide the infrastructure to manage this science:
+- **Centralized Annotation**: Ensuring team-wide consistency.
+- **Version Control**: Snapshotting your "Science" so you can repeat experiments.
 
 ---
 
-## Exploration: The Model Zoo
-
-When you generate a version in Roboflow, you can choose from several state-of-the-art architectures. Understanding the trade-offs between them is key to a successful project.
-
-### 1. YOLOv8 (You Only Look Once v8)
-**The Industry Standard.** Developed by Ultralytics, YOLOv8 is the latest evolution in the YOLO family.
-- **Speed**: Optimized for real-time inference on edge devices (NVIDIA Jetson, Mobile).
-- **Accuracy**: Significant improvements in Mean Average Precision (mAP) over previous versions.
-- **Versatility**: Supports Object Detection, Segmentation, and Pose Estimation in a single framework.
-
-### 2. RF-DETR (Roboflow DEtection TRansformer)
-**The Transformer Powerhouse.** RF-DETR is Roboflow's custom implementation and optimization of the DETR architecture.
-- **Architecture**: Moves away from standard convolutions towards **Vision Transformers (ViT)**.
-- **Global Context**: Excellent at understanding the relationship between distant objects in an image.
-- **Accuracy**: Often outperforms YOLO in complex, high-resolution scenes with many overlapping objects.
-
-### 3. YOLOv5
-**The Battle-Tested Classic.** Also from Ultralytics, YOLOv5 remains highly relevant for legacy systems and stable production environments.
-- **Stability**: Extremely well-documented with a massive community.
-- **Deployment**: Seamless integration with almost every hardware accelerator.
-- **Lightweight**: The "Nano" versions are perfect for low-power IoT devices.
-
----
-
-## Real-World Use Cases
-
-Implementation matters, but the *application* is where the value lies. Here are common use cases built on Roboflow:
-
-### 🏙️ Smart City Infrastructure
-- **Traffic Monitoring**: Counting vehicles and identifying congestion patterns in real-time.
-- **Pedestrian Safety**: Detecting jaywalking or monitoring crossing zones.
-
-### 🏭 Industrial Automation
-- **Defect Detection**: Identifying scratches or cracks on manufacturing assembly lines.
-- **Safety Compliance**: Ensuring workers are wearing proper PPE (Hard hats, vests).
-
-### 🏥 Healthcare and Biotech
-- **Cell Counting**: Automating the analysis of microscope slides.
-- **Surgical Assistance**: Tracking instruments during robotic surgery.
-
-### 📦 Retail and Logistics
-- **Shelf Monitoring**: Detecting out-of-stock items in grocery stores.
-- **Package Sorting**: Identifying labels and dimensions on conveyor belts.
-
-In the next chapter, we'll look at how to take these models and implement them in **PyTorch**.
+> [!TIP]
+> Before you start labeling, define a strict "Labeling Guide" to ensure every object is marked the same way every time.

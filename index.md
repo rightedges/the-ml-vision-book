@@ -1,21 +1,22 @@
 ---
 layout: page
-title: "ML Vision: The Roboflow Guide"
+title: "Foundations of ML Vision"
 ---
 
-# Master Modern Computer Vision
+# Foundations of ML Vision
 
-Welcome to the comprehensive guide to building and deploying modern ML vision models. This book uses **Roboflow** as its foundation and explores implementation paths in **PyTorch** and the **Web**.
+Computer Vision is shifting from a specialized research field to a foundational tier of modern software. This book explores the core principles of how computers see, process, and understand the visual world.
 
-## What's Inside?
+## Conceptual Core
 
-- **Modern Vision Models**: Deep dive into YOLOv8, RF-DETR, and more.
-- **PyTorch Integration**: Custom training loops and inference engines.
-- **Web Deployment**: Real-time inference in the browser with `roboflow.js`.
+- **First Principles**: Understanding pixels, tensors, and the math of "models."
+- **Computer Science of Vision**: The transition from hand-crafted features to deep learning.
+- **Architecture**: A deep dive into CNNs and Transformers.
+- **Deployment**: The engineering of high-performance edge intelligence.
 
-[Get Started]({{ site.baseurl }}/chapters/1-introduction.html){: .btn }
+[Start Reading]({{ site.baseurl }}/chapters/1-introduction.html){: .btn }
 
-## Chapters
+## Curriculum
 
 {% for chapter in site.data.navigation.chapters %}
 - [{{ chapter.title }}]({{ site.baseurl }}{{ chapter.url }}.html)

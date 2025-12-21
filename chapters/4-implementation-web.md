@@ -1,59 +1,40 @@
 ---
 layout: page
-title: Chapter
+title: Deployment & Edge
 ---
 
-# Chapter 4: Web Implementation
+# Chapter 4: Edge Intelligence
 
-Bringing Vision models to the web allows for real-time interaction without server-side latency. Roboflow provides a seamless JavaScript library for this.
+A model is useless if it sits on a researcher's laptop. To provide value, it must be **Deployed**.
 
-## Getting Started with `roboflow.js`
+## Cloud vs. Edge Deployment
 
-You can include the SDK via CDN or npm.
+### Cloud Deployment
+Your application sends an image to a server, the server runs the math, and sends back the result.
+- **Pros**: Unlimited computing power.
+- **Cons**: Latency, high cost, and privacy concerns.
 
-### Using CDN
+### Edge Deployment
+The model runs directly on the device (your phone, a camera, or a browser).
+- **Pros**: Real-time speed, works offline, maximum privacy.
+- **Cons**: Limited battery and processing power.
 
-```html
-<script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
-```
+## The Web as an Edge Device
 
-### Initializing the Model
+With **roboflow.js** and **TensorFlow.js**, the browser becomes a powerful vision engine. We can leverage the user's GPU (via WebGL) to run detections in real-time.
 
 ```javascript
-const rf = roboflow.auth({
-  publishable_key: "YOUR_PUBLISHABLE_KEY"
-});
-
-rf.load({
-  model: "your-model-id",
-  version: "1"
-}).then(model => {
-  // Model is ready
-  model.detect(imageElement).then(predictions => {
-    console.log(predictions);
-  });
+// Loading a model to run locally on the client's machine
+model.load().then(m => {
+  m.detect(videoElement); // Zero server latency
 });
 ```
 
-## Creating a Real-Time Camera Viewer
+## Optimization: Quantization
 
-To create a real-time experience, you can hook into the `requestAnimationFrame` loop and pass the `<video>` element to the `detect` function.
-
-```javascript
-function predict() {
-  model.detect(video).then(predictions => {
-    renderPredictions(predictions);
-    requestAnimationFrame(predict);
-  });
-}
-```
-
-### Performance Optimization
-
-- **Offscreen Rendering**: Use `OffscreenCanvas` for heavy drawing operations.
-- **Model Quantization**: Roboflow uses TensorFlow.js under the hood, benefit from quantized weights for faster load times.
+To fit large models on edge devices, we use **Quantization**. This involves reducing the precision of the model's numbers (e.g., from 32-bit to 8-bit). This makes the model smaller and faster with only a tiny hit to accuracy.
 
 ---
 
-> [!CAUTION]
-> Browsers have limits on WebGL memory. Be sure to dispose of unused textures if you are manually handling TensorFlow.js tensors.
+> [!NOTE]
+> The future of ML Vision is "Intelligence at the Source"—models that live inside the sensors themselves.

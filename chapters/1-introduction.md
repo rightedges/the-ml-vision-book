@@ -1,30 +1,42 @@
 ---
 layout: page
-title: Chapter
+title: Foundations
 ---
 
-# Chapter 1: Introduction to ML Vision
+# Chapter 1: Foundations of ML Vision
 
-Computer Vision (CV) is the field of Artificial Intelligence that enables computers and systems to derive meaningful information from digital images, videos, and other visual inputs.
+To understand machine learning vision, we must first ask a fundamental question: **How does a computer see?**
 
-## The Evolution of Vision Models
+## Biological vs. Computer Vision
 
-In the early days, computer vision relied on hand-crafted features (like SIFT or HOG). Today, we use **Deep Learning** and **Convolutional Neural Networks (CNNs)** or **Vision Transformers (ViTs)** to automatically learn features from data.
+When you look at a cat, your brain processes light hitting your retina into complex shapes, patterns, and concepts. A computer, however, sees nothing but a grid of numbers.
 
-### Why Roboflow?
+### The Pixel Grid
+Every digital image is a three-dimensional array (or **tensor**) of numbers:
+- **Height** and **Width**: The resolution of the image.
+- **Channels**: Usually 3 (Red, Green, Blue).
 
-Building a vision model from scratch is hard. You need to:
-1.  Collect thousands of images.
-2.  Annotate them accurately.
-3.  Preprocess and augment the data.
-4.  Train a complex model.
-5.  Deploy it to a scaleable environment.
+At its most basic level, Computer Vision is the math required to turn this grid of numbers into a semantic understanding (e.g., "This grid contains a cat").
 
-**Roboflow** simplifies this entire pipeline, allowing you to focus on the problem you're solving rather than the infrastructure.
+## What is a "Model"?
 
-## Basic Use Case: Object Detection
+In the context of ML Vision, a **Model** is a mathematical function that has been "trained" to recognize patterns.
 
-The most common starting point in ML Vision is **Object Detection**. Unlike classification (which tells you *what* is in an image), object detection tells you *what* and *where* (using bounding boxes).
+Imagine a complex mathematical equation with millions of knobs (called **parameters** or **weights**). 
+1. **Training**: We show the equation millions of images. Every time it's wrong, we turn the knobs slightly to get closer to the right answer.
+2. **Inference**: Once the knobs are set, we can show it a new image, and the math will output a probability (e.g., "98% likely to be a cat").
+
+## From Pixels to Tensors
+
+In modern AI, we don't just work with pixels. we transform them into **Tensors**. 
+- A **Scalar** is a single number.
+- A **Vector** is a list of numbers.
+- A **Matrix** is a grid of numbers.
+- A **Tensor** is the generalized form of all the above.
+
+Vision models use multi-dimensional tensors to represent color, depth, and spatial relationships all at once.
+
+---
 
 > [!NOTE]
-> In the next chapter, we will see how to build a basic Object Detection model using Roboflow Universe and custom data.
+> Understanding that a model is just "optimized math" is the first step to mastering Computer Vision. In the next chapter, we will explore the specific tasks we ask these models to perform.

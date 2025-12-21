@@ -1,58 +1,43 @@
 ---
 layout: page
-title: Chapter
+title: Architecture & Training
 ---
 
-# Chapter 3: PyTorch Implementation
+# Chapter 3: Architecture and Training
 
-In this chapter, we'll dive into the code required to run inference using a model trained on Roboflow within a PyTorch environment.
+Once you have your data, you need an architecture to process it. Modern ML Vision is dominated by two main philosophies: **CNNs** and **Transformers**.
 
-## The Roboflow Inference SDK
+## 1. Convolutional Neural Networks (CNNs)
+For decades, CNNs (like **YOLOv8** and **YOLOv5**) have been the gold standard.
+- **How they work**: They use small "filters" that slide across the image to detect features like edges -> shapes -> objects.
+- **Strength**: Extremely fast and efficient at recognizing spatial patterns.
 
-The easiest way to integrate Roboflow models into your Python application is using the `inference-sdk`.
+## 2. Vision Transformers (ViT)
+The new frontier. Architectures like **RF-DETR** use the "Attention" mechanism originally designed for language (like ChatGPT).
+- **How they work**: Instead of filters, they look at the whole image at once and determine which parts are "attending" to each other.
+- **Strength**: Better at understanding global context and complex relationships.
 
-### Installation
+## The Training Loop
 
-```bash
-pip install inference-sdk
-```
+Training is the process of minimizing **Loss**. 
+- **Loss** is a number that represents how "wrong" the model is.
+- Through **Backpropagation**, we update the model's weights to make that number as small as possible.
 
-### Basic Inference Code
+### Implementation with PyTorch
 
-Here is how you can perform inference on a local image:
-
-```python
-from inference_sdk import InferenceHTTPClient
-
-# Initialize the client
-CLIENT = InferenceHTTPClient(
-    api_url="https://detect.roboflow.com",
-    api_key="YOUR_ROBOFLOW_API_KEY"
-)
-
-# Perform inference
-result = CLIENT.infer("path/to/your/image.jpg", model_id="your-model-id/version")
-
-# Access predictions
-for prediction in result["predictions"]:
-    print(f"Detected: {prediction['class']} with confidence {prediction['confidence']}")
-```
-
-## Custom PyTorch Datasets
-
-If you want to train your own models using PyTorch's native tools, you can download your Roboflow dataset in the `YOLOv8` or `COCO` format.
+In a production environment, you might use the Roboflow SDK to handle the heavy lifting, but the underlying logic remains:
 
 ```python
 import torch
-from torch.utils.data import DataLoader
-# ... load your dataset here ...
+
+# A theoretical inference step
+model.eval()
+with torch.no_grad():
+    prediction = model(input_tensor)
+    # The math happens here!
 ```
 
-### Why use PyTorch for ML Vision?
-
-1.  **Flexibility**: You can define custom loss functions and architectures.
-2.  **Performance**: Leveraging GPU acceleration with CUDA.
-3.  **Ecosystem**: Integration with libraries like `torchvision`, `albumentations`, and `clearml`.
-
-> [!IMPORTANT]
-> Always ensure your input image size matches the size used during model training (e.g., 640x640).
+## Choosing your Model
+- **Speed requirement?** Use YOLOv8.
+- **High precision in complex scenes?** Use RF-DETR.
+- **Extreme low power?** Use YOLOv5-Nano.
