@@ -12,7 +12,7 @@ In this final curriculum chapter, we are going to walk through a complete, end-t
 
 The problem is simple: You have a driveway gate. Sometimes it’s open, sometimes it’s closed. You have a security camera watching it, but you don't want to spend your life checking the feed. You want a digital apprentice—a local AI—to watch the gate for you and alert you only when the state changes. 
 
-This project will bring together every concept we have learned, from the raw RTSP feed to the silicon of an edge device.
+But why use vision for this? Often, we find ourselves with infrastructure that is "pre-digital." Perhaps you have a sturdy, heavy gate that has stood for thirty years—long before the era of smart sensors. It wasn't built with internal status reporting, and it is located at the far edge of your property, well beyond the reliable reach of home WiFi. You can't easily run new wires, but you *can* point a camera at it. By using a vision model, we can add "intelligence" to legacy hardware without ever touching the gate itself.
 
 ## Step 1: Gathering the Experience (Data Collection)
 
