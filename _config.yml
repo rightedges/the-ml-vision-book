@@ -13,7 +13,7 @@ plugins:
   - jekyll-sitemap
 
 # Theme settings
-color_scheme: dark # Optional: Dark mode by default
+color_scheme: light # Optional: Dark mode by default
 search_enabled: true
 aux_links:
   "View on GitHub":
